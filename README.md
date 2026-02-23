@@ -7,7 +7,7 @@ Josafa Victor da Costa - RA: 2402270
 
 ## Tecnologias Utilizadas
 - Python
-- FLask
+- Flask
 - MySQL
 - HTML5
 - CSS
