@@ -1,0 +1,95 @@
+# Projeto CRUD 3 Camadas - Cadastro de Networking
+# Participantes do Grupo:
+#  RA2400853 - Gabriel Joia Costa
+#  RA2402270 - Josafa Victor da Costa
+/* Fundo geral */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eef2f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho Azul Corporativo */
+.topo {
+    background-color: #0056a6;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Container central */
+.container {
+    width: 450px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+
+/* Título interno */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #0056a6;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    color: #003d73;
+}
+
+/* Inputs e textarea */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border: 1px solid #bfc7d1;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+/* Mensagem de sucesso */
+.mensagem-sucesso {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: #0056a6;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 14px;
+}

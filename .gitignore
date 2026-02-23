@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+
+# Flask
+instance/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Banco local
+*.db
+
+# IDEs (opcional mas recomendado)
+.vscode/
+.idea/
