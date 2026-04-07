@@ -3,7 +3,7 @@
 #  RA2400853 - Gabriel Joia Costa
 #  RA2402270 - Josafa Victor da Costa
 from flask import Flask, render_template, request
-from dbsp2 import get_connection
+from db import get_connection
 from datetime import datetime
 import webbrowser
 import threading
@@ -14,13 +14,13 @@ app = Flask(__name__)
 # Página inicial — Cadastro
 @app.route("/")
 def cadastro():
-    return render_template("cadastrosp2.html")
+    return render_template("cadastro.html")
 
 
 # Página para digitar o ID e carregar dados
 @app.route("/alterar")
 def alterar():
-    return render_template("alterarsp2.html")
+    return render_template("alterar.html")
 
 
 # Salvar novo contato
@@ -66,7 +66,7 @@ def salvar_contato():
     conn.close()
 
     return render_template(
-        "cadastrosp2.html",
+        "cadastro.html",
         mensagem=f"Contato incluído com sucesso! ID: {id_novo}"
     )
 
@@ -97,11 +97,11 @@ def editar():
 
     if not contato:
         return render_template(
-            "alterarsp2.html",
+            "alterar.html",
             mensagem="Contato não encontrado para o ID informado."
         )
 
-    return render_template("editarsp2.html", contato=contato)
+    return render_template("editar.html", contato=contato)
 
 
 # Atualizar contato existente
@@ -155,7 +155,7 @@ def atualizar():
     conn.close()
 
     return render_template(
-        "alterarsp2.html",
+        "alterar.html",
         mensagem=f"Contato ID {id_contato} atualizado com sucesso!"
     )
 
