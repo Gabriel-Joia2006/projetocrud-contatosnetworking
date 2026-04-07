@@ -1,0 +1,142 @@
+<!--
+Projeto CRUD 3 Camadas - Cadastro de Contatos de Networking
+Participantes do Grupo:
+RA2400853 - Gabriel Joia Costa
+RA2402270 - Josafa Victor da Costa
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Contato</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilosp2.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="top-buttons">
+        <a href="/">Incluir Contato</a>
+        <a href="/alterar">Alterar Contato</a>
+    </div>
+
+    <h2>Editar Contato</h2>
+
+    <form action="/atualizar" method="POST">
+
+        <input type="hidden" name="id" value="{{ contato[0] }}">
+
+        <div class="form-row">
+            <div class="field">
+                <label>Nome:</label>
+                <input type="text" name="nome" value="{{ contato[1] }}" required>
+            </div>
+
+            <div class="field">
+                <label>Email:</label>
+                <input type="email" name="email" value="{{ contato[2] }}">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="field">
+                <label>Telefone:</label>
+                <input type="text" name="telefone" value="{{ contato[3] }}">
+            </div>
+
+            <div class="field">
+                <label>País:</label>
+                <input type="text" name="pais" value="{{ contato[7] }}">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="field">
+                <label>Estado:</label>
+                <select id="estado" name="estado_regiao" required></select>
+            </div>
+
+            <div class="field">
+                <label>Cidade:</label>
+                <select id="cidade" name="cidade" required></select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="field">
+                <label>Empresa:</label>
+                <input type="text" name="empresa" value="{{ contato[8] }}">
+            </div>
+
+            <div class="field">
+                <label>Profissão:</label>
+                <input type="text" name="profissao" value="{{ contato[9] }}">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="field">
+                <label>Fonte:</label>
+                <input type="text" name="fonte" value="{{ contato[10] }}">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="field" style="flex: 1;">
+                <label>Observações:</label>
+                <textarea name="observacoes" rows="4">{{ contato[4] }}</textarea>
+            </div>
+        </div>
+
+        <button type="submit">Salvar Alterações</button>
+
+    </form>
+
+</div>
+
+<script>
+    const estadoAtual = "{{ contato[6] }}";
+    const cidadeAtual = "{{ contato[5] }}";
+
+    async function carregarEstadosECidades(estadoSelecionado = "", cidadeSelecionada = "") {
+        const estadoSelect = document.getElementById("estado");
+        const cidadeSelect = document.getElementById("cidade");
+
+        const response = await fetch("/static/estados_cidades.json");
+        const dados = await response.json();
+
+        estadoSelect.innerHTML = '<option value="">Selecione...</option>';
+        Object.keys(dados).sort().forEach(uf => {
+            const option = document.createElement("option");
+            option.value = uf;
+            option.textContent = uf;
+            if (uf === estadoSelecionado) option.selected = true;
+            estadoSelect.appendChild(option);
+        });
+
+        function atualizarCidades() {
+            const uf = estadoSelect.value;
+            cidadeSelect.innerHTML = '<option value="">Selecione...</option>';
+
+            if (dados[uf]) {
+                dados[uf].forEach(cidade => {
+                    const option = document.createElement("option");
+                    option.value = cidade;
+                    option.textContent = cidade;
+                    if (cidade === cidadeSelecionada) option.selected = true;
+                    cidadeSelect.appendChild(option);
+                });
+            }
+        }
+
+        estadoSelect.addEventListener("change", atualizarCidades);
+
+        if (estadoSelecionado) atualizarCidades();
+    }
+
+    carregarEstadosECidades(estadoAtual, cidadeAtual);
+</script>
+
+</body>
+</html>

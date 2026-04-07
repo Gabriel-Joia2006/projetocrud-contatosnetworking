@@ -1,0 +1,56 @@
+<!--
+Projeto CRUD 3 Camadas - Cadastro de Contatos de Networking
+Participantes do Grupo:
+RA2400853 - Gabriel Joia Costa
+RA2402270 - Josafa Victor da Costa
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Alterar Contato</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilosp2.css') }}">
+</head>
+
+<body>
+
+<!-- Barra superior fixa -->
+<div class="top-bar">
+    Cadastro de Contatos Networking
+</div>
+
+<!-- Conteúdo da página -->
+<div class="page-content">
+
+<div class="container alterar">
+
+    <div class="top-buttons">
+        <a href="/">➕ Incluir Contato</a>
+        <a href="/alterar">✏️ Alterar Contato</a>
+    </div>
+
+    <h2>✏️ Alterar Contato</h2>
+
+    {% if mensagem %}
+        <p class="mensagem-erro">{{ mensagem }}</p>
+    {% endif %}
+
+    <form method="POST" action="/editar">
+
+        <div class="form-row">
+            <div class="field">
+                <label>ID do Contato</label>
+                <input type="number" name="id" placeholder="Digite o ID do contato" required>
+            </div>
+        </div>
+
+        <button type="submit">🔍 Carregar Dados</button>
+
+    </form>
+
+</div>
+
+</div> <!-- fecha page-content -->
+
+</body>
+</html>

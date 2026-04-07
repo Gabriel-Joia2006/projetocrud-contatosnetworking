@@ -13,14 +13,18 @@ Josafa Victor da Costa - RA: 2402270
 - CSS
 
 # Estrutura do Projeto
-Sprint1/
+projeto-contatos/
 ├── static/
+│ └── estilo.css
 ├── templates/
+│ ├── cadastro.html
+│ ├── alterar.html
+│ └── editar.html
+├── app.py
+├── db.py
+├── requirements.txt
 ├── .gitignore
-├── appsp1.py
-├── dbsp1.py
-├── README.md
-└── requirements.txt
+└── README.md
 
 ## Pré-requisitos
 Antes de executar, instale:
@@ -33,7 +37,7 @@ Antes de executar, instale:
     pip install -r requirements.txt
 
 2. Executar aplicação:
-    python appsp1.py
+    python app.py
 
 3. Acessar no navegador:
     http://127.0.0.1:5000
@@ -53,4 +57,4 @@ CREATE TABLE contatos (
 );
 
 3. Ajuste as credenciais em:
-dbsp1.py
+db.py

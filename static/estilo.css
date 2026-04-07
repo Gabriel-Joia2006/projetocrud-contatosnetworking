@@ -1,0 +1,154 @@
+# Projeto CRUD 3 Camadas - Cadastro de Contatos de Networking
+# Participantes do Grupo:
+#  RA2400853 - Gabriel Joia Costa
+#  RA2402270 - Josafa Victor da Costa
+/* Fundo geral da página */
+body {
+    background: #cfe3ff; /* azul claro mais evidente */
+    font-family: Arial, sans-serif;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra superior fixa */
+.top-bar {
+    width: 100%;
+    background-color: #1e3a8a;
+    color: white;
+    padding: 18px 0;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* Ajuste para que o conteúdo não fique escondido atrás da barra */
+.page-content {
+    margin-top: 90px;
+}
+
+/* Moldura destacada do formulário */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 14px;
+
+    /* Moldura mais forte e visível */
+    border: 4px solid #1e3a8a;
+
+    /* Sombra mais marcante */
+    box-shadow: 0 0 25px rgba(0,0,0,0.25);
+}
+
+/* Título interno */
+h2 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Botões superiores */
+.top-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.top-buttons a {
+    background-color: #1e40af;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.top-buttons a:hover {
+    background-color: #1e3a8a;
+}
+
+/* Linhas do formulário */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+/* Campos */
+.field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+input, select, textarea {
+    padding: 10px;
+    border: 2px solid #94a3b8;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #0f172a;
+    background: #f8fafc;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #1e40af;
+    outline: none;
+}
+
+/* Botão principal */
+button {
+    width: 100%;
+    background-color: #1e40af;
+    color: white;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #1e3a8a;
+}
+
+/* Mensagens */
+.mensagem-sucesso {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #10b981;
+}
+
+.mensagem-erro {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #ef4444;
+}
